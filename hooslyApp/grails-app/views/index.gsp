@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to Grails</title>
+    <title>Welcome to Hoosly</title>
 </head>
 <body>
 <content tag="nav">
@@ -45,19 +45,16 @@
 
 <div class="svg" role="presentation">
     <div class="grails-logo-container">
-        <asset:image src="grails-cupsonly-logo-white.svg" class="grails-logo"/>
+        <asset:image src="liveoakhome-3.png" class="grails-logo"/>
     </div>
 </div>
 
 <div id="content" role="main">
     <section class="row colset-2-its">
-        <h1>Welcome to Grails</h1>
+        <h1>Welcome to Hoosly</h1>
 
         <p>
-            Congratulations, you have successfully started your first Grails application! At the moment
-            this is the default page, feel free to modify it to either redirect to a controller or display
-            whatever content you may choose. Below is a list of controllers that are currently deployed in
-            this application, click on each to execute its default action:
+            Customers - Create a user with our onboarding, input home details, setup preferences, choose a subscription price, automated reminder and scheduling tasks, AI chatbot for homeowner queries, recommend services and facilitate bookings, request repair service, vendor matching and real-time tracking of service appointments. Vendors - Vendors can manage services, appointments and payments with onboarding, subscription billing, access service requests, dashboard to accept, track and complete service requests efficiently. Admin Dashboard - Business oversight, analytics, communication, real-time performance, service request tracking, subscription insights, service issues, ticketing system for customer complaints, escalations, system performance monitoring, error reporting, customer engagement, promotions and vendor relationship management.
         </p>
 
         <div id="controllers" role="navigation">
