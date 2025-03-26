@@ -90,6 +90,10 @@
                         <g:link controller="vendorSubscriptionCurrentPlanType" action="index">Vendor Subscription Current Plan Type</g:link>
                     </li>
                     <a class="home" href="${createLink(uri: '/')}"><h3>< Back to Homepage</h3></a>
+                    <br>
+                    <g:form controller="logout">
+						<g:submitButton name="logout" value="Logout"/>
+					</g:form>
             
             </ul>
         </div>
