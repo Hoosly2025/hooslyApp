@@ -34,21 +34,21 @@
 
 <div class="footer row" role="contentinfo">
     <div class="col">
-        <asset:image src="advancedgrails.svg" alt="Customers" class="float-left"/>
-        <strong class="centered">Customers</strong>
+        <g:link controller="customer" action="index"><asset:image src="advancedgrails.svg" alt="Customers" class="float-left"/></g:link>
+        <strong class="centered"><g:link controller="customer" action="index">Customers</g:link></strong>
         <p>Step-by-step process for customers to find vendors.</p>
 
     </div>
     <div class="col">
-        <asset:image src="documentation.svg" alt="Vendors" class="float-left"/>
-        <strong class="centered"><a href="http://docs.grails.org" target="_blank">Vendors</a></strong>
+        <g:link controller="vendor" action="index"><asset:image src="documentation.svg" alt="Vendors" class="float-left"/></g:link>
+        <strong class="centered"><g:link controller="vendor" action="index">Vendors</g:link></strong>
         <p>Vendors can provide a list of services for customers.</p>
 
     </div>
 
     <div class="col">
-        <asset:image src="slack.svg" alt="Administration" class="float-left"/>
-        <strong class="centered"><a href="https://grails-slack.cfapps.io" target="_blank">Administration</a></strong>
+        <g:link controller="admin" action="index"><asset:image src="slack.svg" alt="Administration" class="float-left"/></g:link>
+        <strong class="centered"><g:link controller="admin" action="index">Administration</g:link></strong>
         <p>Use the administration dashboard to track orders.</p>
     </div>
 </div>
