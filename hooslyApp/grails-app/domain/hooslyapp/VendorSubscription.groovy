@@ -1,8 +1,8 @@
 package hooslyapp
 
-class CustomerSubscription {
+class VendorSubscription {
 
-    CustomerOnboarding customerOnboarding
+    VendorOnboarding vendorOnboarding
 
 	Date subscriptionStart
 	Date renewal
@@ -11,7 +11,7 @@ class CustomerSubscription {
 	Date nextBilling
 	
     static constraints = {
-		customerOnboarding(nullable:false)
+		vendorOnboarding(nullable:false)
 	    subscriptionStart(nullable:false)
         renewal(nullable:false)	
 		paymentMethod(nullable:false, maxSize:100)

@@ -1,7 +1,10 @@
 package hooslyapp
 
+import security.*
+
 class VendorOnboarding {
 
+	User vendor
     String companyName
     String primaryContactName
     String primaryContactEmail
@@ -26,7 +29,8 @@ class VendorOnboarding {
 	Date updateTime
         
     static constraints = {
-		companyName(nullable:false, maxSize:100)
+		vendor(nullable:false)
+        companyName(nullable:false, maxSize:100)
         primaryContactName(nullable:false, maxSize:500)
         primaryContactEmail(nullable:false, maxSize:100)
         primaryContactPhone(nullable:false, maxSize:50)

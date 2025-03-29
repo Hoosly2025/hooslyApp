@@ -23,6 +23,19 @@
 		<p>
         <div id="controllers" role="navigation">
         	<ul>
+        	<h3>Customer Services:</h3>
+            		<li class="controller">
+                        <g:link controller="customerOnboarding" action="index">Customer Onboarding</g:link>
+                    </li>
+                    <li class="controller">
+                        <g:link controller="customerMaintenance" action="index">Customer Maintenance</g:link>
+                    </li>
+                    <li class="controller">
+                        <g:link controller="customerSubscription" action="index">Customer Subscription</g:link>
+                    </li>
+                    <li class="controller">
+                        <g:link controller="customerSubscriptionCurrentPlanType" action="index">Customer Subscription Current Plan Type</g:link>
+                    </li>
 		<a class="home" href="${createLink(uri: '/')}"><h3>< Back to Homepage</h3></a>
         <g:form controller="logout">
 		<g:submitButton name="logout" value="Logout"/>

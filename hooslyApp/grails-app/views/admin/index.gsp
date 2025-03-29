@@ -84,6 +84,9 @@
                         <g:link controller="vendorOnboardingServices" action="index">Vendor Onboarding Services</g:link>
                     </li>
                     <li class="controller">
+                        <g:link controller="vendorSubscription" action="index">Vendor Subscription</g:link>
+                    </li>
+                    <li class="controller">
                         <g:link controller="vendorSubscriptionPlan" action="index">Vendor Subscription Plan</g:link>
                     </li>
                     <li class="controller">

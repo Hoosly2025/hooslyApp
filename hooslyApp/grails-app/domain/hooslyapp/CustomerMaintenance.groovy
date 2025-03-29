@@ -1,9 +1,11 @@
 package hooslyapp
 
+import security.*
+
 class CustomerMaintenance {
 
-    CustomerOnboarding customerOnboarding
-    VendorOnboarding vendorOnboarding
+    User customerOnboarding
+    User vendorOnboarding
     
     //TODO: Maintenance Type
     CustomerMaintenanceType maintenanceType

@@ -1,7 +1,10 @@
 package hooslyapp
 
+import security.*
+
 class CustomerOnboarding {
 
+	User customer
     String firstName
 	String lastName
 	String phone
@@ -24,6 +27,7 @@ class CustomerOnboarding {
 	Date updateTime
 	
     static constraints = {
+		customer(nullable:false)
 		firstName(nullable:false, maxSize:500)
         lastName(nullable:false, maxSize:500)
         phone(nullable:false, maxSize:50)
