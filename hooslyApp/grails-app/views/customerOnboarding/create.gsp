@@ -26,9 +26,20 @@
             </ul>
             </g:hasErrors>
             <g:form resource="${this.customerOnboarding}" method="POST">
-                <fieldset class="form">
-                    <f:all bean="customerOnboarding"/>
-                </fieldset>
+                <f:field bean="customerOnboarding" property="customer" widget-optionValue="username"/>
+                <f:field bean="customerOnboarding" property="firstName"/>
+                <f:field bean="customerOnboarding" property="lastName"/>
+                <f:field bean="customerOnboarding" property="phone"/>
+                <f:field bean="customerOnboarding" property="streetAddress"/>
+                <f:field bean="customerOnboarding" property="city"/>
+                <f:field bean="customerOnboarding" property="state"/>
+                <f:field bean="customerOnboarding" property="zipCode"/>
+                <f:field bean="customerOnboarding" property="propertyType" widget-optionValue="propertyType"/>
+                <f:field bean="customerOnboarding" property="propertySize"/>
+                <f:field bean="customerOnboarding" property="numberOfUnits"/>
+                <f:field bean="customerOnboarding" property="frequencyMaintenance" widget-optionValue="maintenanceFrequency"/>
+                <f:field bean="customerOnboarding" property="createTime"/>
+                <f:field bean="customerOnboarding" property="updateTime"/>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>

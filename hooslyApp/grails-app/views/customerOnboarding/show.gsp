@@ -19,7 +19,23 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="customerOnboarding" />
+            <div style="margin-left:50px;">
+            Customer: <f:display bean="customerOnboarding" property="customer"/><br>
+            First Name: <f:display bean="customerOnboarding" property="firstName"/><br>
+            Last Name: <f:display bean="customerOnboarding" property="lastName"/><br>
+            Phone: <f:display bean="customerOnboarding" property="phone"/><br>
+            First Name: <f:display bean="customerOnboarding" property="streetAddress"/><br>
+            Last Name: <f:display bean="customerOnboarding" property="city"/><br>
+            Phone: <f:display bean="customerOnboarding" property="state"/><br>
+            Zip Code: <f:display bean="customerOnboarding" property="zipCode"/><br>
+            Property Type: <f:display bean="customerOnboarding" property="propertyType.propertyType"/><br>
+            Property Size: <f:display bean="customerOnboarding" property="propertySize"/><br>
+            Number of Units: <f:display bean="customerOnboarding" property="numberOfUnits"/><br>
+            Maintenance frequency: <f:display bean="customerOnboarding" property="frequencyMaintenance.maintenanceFrequency"/><br>
+            Create Time: <f:display bean="customerOnboarding" property="createTime"/><br>
+            Update Time: <f:display bean="customerOnboarding" property="updateTime"/><br>
+            
+            </div>
             <g:form resource="${this.customerOnboarding}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.customerOnboarding}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

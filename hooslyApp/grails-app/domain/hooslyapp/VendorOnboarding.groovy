@@ -15,13 +15,13 @@ class VendorOnboarding {
     String businessZipCode
     
     //TODO: services could be a set of checkboxes
-    VendorOnboardingServicesMap servicesMap
+    //VendorOnboardingServicesMap servicesMap
     
     //TODO: categories could map to a category table with parent ID for parent categories
-    VendorOnboardingCategoriesMap categoriesMap
+    //VendorOnboardingCategoriesMap categoriesMap
     
     //TODO: Could be a set of checkboxes, based on city / state, multiple cities, areas
-    VendorOnboardingServiceAreaMap serviceAreaMap
+    //VendorOnboardingServiceAreaMap serviceAreaMap
     
     //licensing
     String certificationsLicensing
@@ -38,9 +38,9 @@ class VendorOnboarding {
         businessCity(nullable:false, maxSize:50)
         businessState(nullable:false, maxSize:50)
         businessZipCode(nullable:false, maxSize:50)
-        servicesMap(nullable:false)
-        categoriesMap(nullable:false)
-        serviceAreaMap(nullable:false)
+        //servicesMap(nullable:false)
+        //categoriesMap(nullable:false)
+        //serviceAreaMap(nullable:false)
         certificationsLicensing(nullable:false, maxSize:1000)
         createTime(nullable:false)
         updateTime(nullable:false)

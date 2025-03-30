@@ -22,7 +22,7 @@ class CustomerOnboarding {
 	CustomerOnboardingMaintenanceFrequency frequencyMaintenance
 	
 	//TODO: service interests could be a drop down, list of check boxes
-	CustomerOnboardingServiceInterestsMap serviceInterests
+	//CustomerOnboardingServiceInterestsMap serviceInterests
 	Date createTime
 	Date updateTime
 	
@@ -39,7 +39,7 @@ class CustomerOnboarding {
         propertySize(nullable:false, maxSize:50)
         numberOfUnits(nullable:true, maxSize:50)
         frequencyMaintenance(nullable:false)
-        serviceInterests(nullable:false)
+        //serviceInterests(nullable:false)
         createTime(nullable:false)
         updateTime(nullable:false)
     }

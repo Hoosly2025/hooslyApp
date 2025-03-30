@@ -1,8 +1,10 @@
 package hooslyapp
 
+import security.*
+
 class VendorSubscription {
 
-    VendorOnboarding vendorOnboarding
+    User vendor
 
 	Date subscriptionStart
 	Date renewal
@@ -11,7 +13,7 @@ class VendorSubscription {
 	Date nextBilling
 	
     static constraints = {
-		vendorOnboarding(nullable:false)
+		vendor(nullable:false)
 	    subscriptionStart(nullable:false)
         renewal(nullable:false)	
 		paymentMethod(nullable:false, maxSize:100)
