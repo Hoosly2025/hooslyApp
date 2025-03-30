@@ -26,9 +26,10 @@
             </ul>
             </g:hasErrors>
             <g:form resource="${this.customerSubscriptionCurrentPlanType}" method="POST">
-                <fieldset class="form">
-                    <f:all bean="customerSubscriptionCurrentPlanType"/>
-                </fieldset>
+            	<f:field bean="customerSubscriptionCurrentPlanType" property="customerSubscription" widget-optionValue="customerOnboarding.customer"/>
+                <f:field bean="customerSubscriptionCurrentPlanType" property="planType" widget-optionValue="planName"/>
+                <f:field bean="customerSubscriptionCurrentPlanType" property="subscriptionEnd"/>
+                <f:field bean="customerSubscriptionCurrentPlanType" property="autoRenew"/>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>

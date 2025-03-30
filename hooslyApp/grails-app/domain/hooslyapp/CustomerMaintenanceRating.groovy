@@ -10,8 +10,8 @@ class CustomerMaintenanceRating {
 	String maintenanceReview
 	
     static constraints = {
-		customerMaintenance(nullable:true)
-		reviewer(nullable:true)
+		customerMaintenance(nullable:false)
+		reviewer(nullable:false)
 		maintenanceRating(nullable:true)
 		maintenanceReview(nullable:true, maxSize:500)
     }

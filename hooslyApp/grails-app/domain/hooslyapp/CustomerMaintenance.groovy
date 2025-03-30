@@ -4,7 +4,7 @@ import security.*
 
 class CustomerMaintenance {
 
-    User customerOnboarding
+	User customerOnboarding
     User vendorOnboarding
     
     //TODO: Maintenance Type
@@ -18,10 +18,6 @@ class CustomerMaintenance {
     Date maintenanceScheduledDate
     Date maintenanceCompletionDate
     
-    //stars, 1-5.
-    CustomerMaintenanceRating customerRating
-    
-   
     Double costDetails
     
     static constraints = {
@@ -33,7 +29,6 @@ class CustomerMaintenance {
 		maintenanceRequestDate(nullable:false)
         maintenanceScheduledDate(nullable:false)
         maintenanceCompletionDate(nullable:false)
-        customerRating(nullable:true)
         costDetails(nullable:true)
         
     }

@@ -19,7 +19,12 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="customerSubscriptionCurrentPlanType" />
+            <div style="margin-left:50px;">
+            Customer Subscription: <f:display bean="customerSubscriptionCurrentPlanType" property="customerSubscription.customerOnboarding.customer"/><br>
+            Plan Type: <f:display bean="customerSubscriptionCurrentPlanType" property="planType.planName"/><br>
+            Subscription End: <f:display bean="customerSubscriptionCurrentPlanType" property="subscriptionEnd"/><br>
+            Auto Renew: <f:display bean="customerSubscriptionCurrentPlanType" property="autoRenew"/><br>
+            </div>
             <g:form resource="${this.customerSubscriptionCurrentPlanType}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.customerSubscriptionCurrentPlanType}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

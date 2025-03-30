@@ -28,9 +28,10 @@
             </g:hasErrors>
             <g:form resource="${this.customerSubscriptionCurrentPlanType}" method="PUT">
                 <g:hiddenField name="version" value="${this.customerSubscriptionCurrentPlanType?.version}" />
-                <fieldset class="form">
-                    <f:all bean="customerSubscriptionCurrentPlanType"/>
-                </fieldset>
+                <f:field bean="customerSubscriptionCurrentPlanType" property="customerSubscription" widget-optionValue="customerOnboarding.customer"/>
+                <f:field bean="customerSubscriptionCurrentPlanType" property="planType" widget-optionValue="planName"/>
+                <f:field bean="customerSubscriptionCurrentPlanType" property="subscriptionEnd"/>
+                <f:field bean="customerSubscriptionCurrentPlanType" property="autoRenew"/>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
                 </fieldset>

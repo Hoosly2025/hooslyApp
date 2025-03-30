@@ -28,9 +28,15 @@
             </g:hasErrors>
             <g:form resource="${this.customerMaintenance}" method="PUT">
                 <g:hiddenField name="version" value="${this.customerMaintenance?.version}" />
-                <fieldset class="form">
-                    <f:all bean="customerMaintenance"/>
-                </fieldset>
+                <f:field bean="customerMaintenance" property="customerOnboarding"/>
+                <f:field bean="customerMaintenance" property="vendorOnboarding"/>
+                <f:field bean="customerMaintenance" property="maintenanceType" widget-optionValue="maintenanceType"/>
+                <f:field bean="customerMaintenance" property="maintenanceDetails"/>
+                <f:field bean="customerMaintenance" property="maintenanceStatus" widget-optionValue="maintenanceStatus"/>
+                <f:field bean="customerMaintenance" property="maintenanceRequestDate"/>
+                <f:field bean="customerMaintenance" property="maintenanceScheduledDate"/>
+                <f:field bean="customerMaintenance" property="maintenanceCompletionDate"/>
+                <f:field bean="customerMaintenance" property="costDetails"/>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
                 </fieldset>

@@ -19,7 +19,17 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="customerMaintenance" />
+            <div style="margin-left:50px;">
+            Customer Onboarding: <f:display bean="customerMaintenance" property="customerOnboarding"/><br>
+            Vendor Onboarding: <f:display bean="customerMaintenance" property="vendorOnboarding"/><br>
+            Maintenance Type: <f:display bean="customerMaintenance" property="maintenanceType.maintenanceType"/><br>
+            Maintenance Details: <f:display bean="customerMaintenance" property="maintenanceDetails"/><br>
+            Maintenance Status: <f:display bean="customerMaintenance" property="maintenanceStatus.maintenanceStatus"/><br>
+            Maintenance Request Date: <f:display bean="customerMaintenance" property="maintenanceRequestDate"/><br>
+            Maintenance Scheduled Date: <f:display bean="customerMaintenance" property="maintenanceScheduledDate"/><br>
+            Maintenance Completion Date: <f:display bean="customerMaintenance" property="maintenanceCompletionDate"/><br>
+            Cost Details: <f:display bean="customerMaintenance" property="costDetails"/><br>
+            </div>
             <g:form resource="${this.customerMaintenance}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.customerMaintenance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
