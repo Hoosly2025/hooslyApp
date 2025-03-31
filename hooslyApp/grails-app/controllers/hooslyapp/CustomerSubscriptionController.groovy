@@ -4,10 +4,11 @@ import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 
-@Secured('ROLE_ADMIN')
+@Secured(['ROLE_ADMIN', 'ROLE_USER'])
 class CustomerSubscriptionController {
 
     CustomerSubscriptionService customerSubscriptionService
+    def springSecurityService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -21,7 +22,8 @@ class CustomerSubscriptionController {
     }
 
     def create() {
-        respond new CustomerSubscription(params)
+		def user = springSecurityService.currentUser
+		respond new CustomerSubscription(params), model:[user: user]
     }
 
     def save(CustomerSubscription customerSubscription) {

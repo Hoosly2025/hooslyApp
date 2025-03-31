@@ -6,7 +6,7 @@
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
     <body>
-        <a href="#create-customerSubscription" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+    	<a href="#create-customerSubscription" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
@@ -27,8 +27,9 @@
             </g:hasErrors>
             <g:form resource="${this.customerSubscription}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="customerSubscription"/>
+                    <f:all bean="customerSubscription" except="customer"/>
                 </fieldset>
+                <f:field name="customer" bean="customerSubscription" property="customer" value="${user}" readonly="true"/>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>

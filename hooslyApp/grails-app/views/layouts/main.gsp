@@ -10,7 +10,7 @@
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
 
     <asset:stylesheet src="application.css"/>
-
+	<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
     <g:layoutHead/>
 </head>
 
