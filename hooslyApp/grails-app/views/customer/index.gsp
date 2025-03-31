@@ -31,6 +31,12 @@
                         <g:link controller="customerMaintenance" action="index">Customer Maintenance</g:link>
                     </li>
                     <li class="controller">
+                        <g:link controller="customerPhotos" action="index">Customer Photos</g:link>
+                    </li>
+                    <li class="controller">
+                        <g:link controller="customerMaintenancePhotos" action="index">Customer Maintenance Photos</g:link>
+                    </li>
+                    <li class="controller">
                         <g:link controller="customerSubscription" action="index">Customer Subscription</g:link>
                     </li>
                     <li class="controller">

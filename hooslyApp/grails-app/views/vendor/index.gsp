@@ -31,6 +31,15 @@
                     </li>      
             <li class="controller">
                         <g:link controller="vendorSubscriptionCurrentPlanType" action="index">Vendor Subscription Current Plan Type</g:link>
+                    </li>
+            <li class="controller">
+                        <g:link controller="vendorPhotos" action="index">Vendor Photos</g:link>
+                    </li>
+            <li class="controller">
+                        <g:link controller="vendorCertifications" action="index">Vendor Certifications</g:link>
+                    </li>      
+            <li class="controller">
+                        <g:link controller="vendorLicenses" action="index">Vendor Licenses</g:link>
                     </li>  
 		<a class="home" href="${createLink(uri: '/')}"><h3>< Back to Homepage</h3></a>
         <g:form controller="logout">
