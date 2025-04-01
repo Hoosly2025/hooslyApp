@@ -45,6 +45,9 @@
                     <li class="controller">
                         <g:link controller="customerSupportTicket" action="index">Customer Support Ticket</g:link>
                     </li>
+                    <li class="controller">
+                        <g:link controller="customerInvoice" action="index">Customer Invoice</g:link>
+                    </li>
 		<a class="home" href="${createLink(uri: '/')}"><h3>< Back to Homepage</h3></a>
         <g:form controller="logout">
 		<g:submitButton name="logout" value="Logout"/>
