@@ -31,16 +31,19 @@
                         <g:link controller="customerMaintenance" action="index">Customer Maintenance</g:link>
                     </li>
                     <li class="controller">
+                        <g:link controller="customerSubscription" action="index">Customer Subscription</g:link>
+                    </li>
+                    <li class="controller">
+                        <g:link controller="customerSubscriptionCurrentPlanType" action="index">Customer Subscription Current Plan Type</g:link>
+                    </li>
+                    <li class="controller">
                         <g:link controller="customerPhotos" action="index">Customer Photos</g:link>
                     </li>
                     <li class="controller">
                         <g:link controller="customerMaintenancePhotos" action="index">Customer Maintenance Photos</g:link>
                     </li>
                     <li class="controller">
-                        <g:link controller="customerSubscription" action="index">Customer Subscription</g:link>
-                    </li>
-                    <li class="controller">
-                        <g:link controller="customerSubscriptionCurrentPlanType" action="index">Customer Subscription Current Plan Type</g:link>
+                        <g:link controller="customerSupportTicket" action="index">Customer Support Ticket</g:link>
                     </li>
 		<a class="home" href="${createLink(uri: '/')}"><h3>< Back to Homepage</h3></a>
         <g:form controller="logout">

@@ -1,0 +1,28 @@
+package hooslyapp
+
+import security.*
+
+class CustomerSupportTicket {
+
+    Date createTime
+	String name
+	String description
+	Date updateTime
+    User customer
+    User vendor
+    CustomerSupportTicketStatus ticketStatus
+	
+    static constraints = {
+		createTime(nullable:false)
+        name(nullable:false, maxSize:500)
+        description(nullable:true, maxSize:1000)
+        updateTime(nullable:false)
+        customer(nullable:false)
+        vendor(nullable:false)
+        ticketStatus(nullable:false)
+    }
+    
+    static mapping = {
+    	version false
+    }
+}

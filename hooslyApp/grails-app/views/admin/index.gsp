@@ -70,6 +70,18 @@
                     <li class="controller">
                         <g:link controller="customerSubscriptionCurrentPlanType" action="index">Customer Subscription Current Plan Type</g:link>
                     </li>
+                    <li class="controller">
+                        <g:link controller="customerPhotos" action="index">Customer Photos</g:link>
+                    </li>
+                    <li class="controller">
+                        <g:link controller="customerMaintenancePhotos" action="index">Customer Maintenance Photos</g:link>
+                    </li>
+                    <li class="controller">
+                        <g:link controller="customerSupportTicket" action="index">Customer Support Ticket</g:link>
+                    </li>
+                    <li class="controller">
+                        <g:link controller="customerSupportTicketStatus" action="index">Customer Support Ticket Status</g:link>
+                    </li>
                 	<h3>Vendor Administration:</h3>
                 	<li class="controller">
                         <g:link controller="vendorOnboardingCategories" action="index">Vendor Onboarding Categories</g:link>
@@ -92,6 +104,15 @@
                     <li class="controller">
                         <g:link controller="vendorSubscriptionCurrentPlanType" action="index">Vendor Subscription Current Plan Type</g:link>
                     </li>
+                    <li class="controller">
+                        <g:link controller="vendorPhotos" action="index">Vendor Photos</g:link>
+                    </li>
+            		<li class="controller">
+                        <g:link controller="vendorCertifications" action="index">Vendor Certifications</g:link>
+                    </li>      
+            		<li class="controller">
+                        <g:link controller="vendorLicenses" action="index">Vendor Licenses</g:link>
+                    </li>  
                     <a class="home" href="${createLink(uri: '/')}"><h3>< Back to Homepage</h3></a>
                     <br>
                     <g:form controller="logout">
