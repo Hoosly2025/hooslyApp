@@ -49,6 +49,7 @@
                         <g:link controller="customerInvoice" action="index">Customer Invoice</g:link>
                     </li>
 		<a class="home" href="${createLink(uri: '/')}"><h3>< Back to Homepage</h3></a>
+		<g:link controller="customer" action="profile" id="${sec.loggedInUserInfo(field: 'id')}"><h3>Customer Profile ></h3></g:link>
         <g:form controller="logout">
 		<g:submitButton name="logout" value="Logout"/>
 		</g:form>							
