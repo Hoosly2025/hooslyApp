@@ -25,11 +25,19 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.vendorCertifications}" method="POST">
+            <g:form resource="${this.vendorCertifications}" method="POST" enctype="multipart/form-data">
                 <fieldset class="form">
-                    <f:all bean="vendorCertifications" except="vendor"/>
+                    <f:all bean="vendorCertifications" except="vendor, filename, fileUpload"/>
                 </fieldset>
                 <g:hiddenField name="vendor" value="${sec.loggedInUserInfo(field: 'id')}" />
+                 <fieldset style="margin-left:340px;">
+                	<div style="float:left;width:50" class="post"><h4>Upload Vendor Certifications:</h4></div>
+                	<br>
+              				Please upload a pdf.<br>
+              		<div>
+                  <input type="file" name="myFile" />
+              </div>	
+                </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>

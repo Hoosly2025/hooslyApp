@@ -19,7 +19,15 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="vendorCertifications" />
+            <div style="margin-left:50px;">
+            Create Time: <f:display bean="vendorCertifications" property="createTime"/><br>
+            Name: <f:display bean="vendorCertifications" property="name"/><br>
+            Description: <f:display bean="vendorCertifications" property="description"/><br>
+            Filename: <f:display bean="vendorCertifications" property="filename"/><br>
+            Vendor: <f:display bean="vendorCertifications" property="vendor"/><br>
+            Update Time: <f:display bean="vendorCertifications" property="updateTime"/><br>
+            <g:link action="download" resource="${this.vendorCertifications}">Download</g:link>
+            </div>
             <g:form resource="${this.vendorCertifications}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.vendorCertifications}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

@@ -31,7 +31,13 @@ class VendorLicensesController {
         }
 
         try {
-            vendorLicensesService.save(vendorLicenses)
+            def transferFile = request.getFile('myFile')
+			if(transferFile != null && !transferFile.empty) {
+				vendorLicenses.filename = transferFile.getOriginalFilename()
+				vendorLicenses.fileUpload = transferFile.getBytes()
+			}
+			vendorLicensesService.save(vendorLicenses)
+            
         } catch (ValidationException e) {
             respond vendorLicenses.errors, view:'create'
             return
@@ -46,6 +52,22 @@ class VendorLicensesController {
         }
     }
 
+	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS'])
+	def download(long id) {
+		VendorLicenses vendorLicensesInstance = vendorLicensesService.get(id)
+		if ( vendorLicensesInstance == null) {
+			flash.message = "Vendor Licenses not found."
+			redirect (action:'index')
+		} else {
+			response.setContentType("APPLICATION/OCTET-STREAM")
+			response.setHeader("Content-Disposition", "Attachment;Filename=\"${vendorLicensesInstance.filename}\"")
+			def outputStream = response.getOutputStream()
+			outputStream << vendorLicensesInstance.fileUpload
+			outputStream.flush()
+			outputStream.close()
+		}
+	}
+	
     def edit(Long id) {
         respond vendorLicensesService.get(id)
     }
@@ -57,6 +79,11 @@ class VendorLicensesController {
         }
 
         try {
+			def transferFile = request.getFile('myFile')
+			if(transferFile != null && !transferFile.empty) {
+				vendorLicenses.filename = transferFile.getOriginalFilename()
+				vendorLicenses.fileUpload = transferFile.getBytes()
+			}
             vendorLicensesService.save(vendorLicenses)
         } catch (ValidationException e) {
             respond vendorLicenses.errors, view:'edit'

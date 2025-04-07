@@ -31,7 +31,13 @@ class VendorCertificationsController {
         }
 
         try {
-            vendorCertificationsService.save(vendorCertifications)
+            def transferFile = request.getFile('myFile')
+			if(transferFile != null && !transferFile.empty) {
+				vendorCertifications.filename = transferFile.getOriginalFilename()
+				vendorCertifications.fileUpload = transferFile.getBytes()
+			}
+			vendorCertificationsService.save(vendorCertifications)
+            
         } catch (ValidationException e) {
             respond vendorCertifications.errors, view:'create'
             return
@@ -46,6 +52,22 @@ class VendorCertificationsController {
         }
     }
 
+	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS'])
+	def download(long id) {
+		VendorCertifications vendorCertificationsInstance = vendorCertificationsService.get(id)
+		if ( vendorCertificationsInstance == null) {
+			flash.message = "Vendor Certifications not found."
+			redirect (action:'index')
+		} else {
+			response.setContentType("APPLICATION/OCTET-STREAM")
+			response.setHeader("Content-Disposition", "Attachment;Filename=\"${vendorCertificationsInstance.filename}\"")
+			def outputStream = response.getOutputStream()
+			outputStream << vendorCertificationsInstance.fileUpload
+			outputStream.flush()
+			outputStream.close()
+		}
+	}
+	
     def edit(Long id) {
         respond vendorCertificationsService.get(id)
     }
@@ -57,6 +79,11 @@ class VendorCertificationsController {
         }
 
         try {
+			def transferFile = request.getFile('myFile')
+			if(transferFile != null && !transferFile.empty) {
+				vendorCertifications.filename = transferFile.getOriginalFilename()
+				vendorCertifications.fileUpload = transferFile.getBytes()
+			}
             vendorCertificationsService.save(vendorCertifications)
         } catch (ValidationException e) {
             respond vendorCertifications.errors, view:'edit'

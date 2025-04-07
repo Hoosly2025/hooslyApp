@@ -26,12 +26,20 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.vendorLicenses}" method="PUT">
+            <g:form resource="${this.vendorLicenses}" method="PUT" enctype="multipart/form-data">
                 <g:hiddenField name="version" value="${this.vendorLicenses?.version}" />
                 <fieldset class="form">
-                    <f:all bean="vendorLicenses" except="vendor"/>
+                    <f:all bean="vendorLicenses" except="vendor, filename, fileUpload"/>
                 </fieldset>
                 <g:hiddenField name="vendor" value="${sec.loggedInUserInfo(field: 'id')}" />
+                 <fieldset style="margin-left:340px;">
+                	<div style="float:left;width:50" class="post"><h4>Upload Vendor License:</h4></div>
+                	<br>
+              				Please upload a pdf.<br>
+              		<div>
+                  <input type="file" name="myFile" />
+              </div>	
+                </fieldset>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
                 </fieldset>
