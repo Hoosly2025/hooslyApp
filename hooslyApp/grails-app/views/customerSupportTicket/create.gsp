@@ -27,10 +27,11 @@
             </g:hasErrors>
             <g:form resource="${this.customerSupportTicket}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="customerSupportTicket" except="ticketStatus"/>
+                    <f:all bean="customerSupportTicket" except="ticketStatus, creator"/>
                 </fieldset>
                 <div style="margin-left:27px;">
                 <f:field bean="customerSupportTicket" property="ticketStatus" widget-optionValue="ticketStatus"/>
+                <g:hiddenField name="creator" value="${sec.loggedInUserInfo(field: 'id')}" />
                 </div>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

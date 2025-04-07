@@ -8,8 +8,8 @@ class CustomerSupportTicket {
 	String name
 	String description
 	Date updateTime
-    User customer
-    User vendor
+    Long creator
+    User assignee
     CustomerSupportTicketStatus ticketStatus
 	
     static constraints = {
@@ -17,8 +17,8 @@ class CustomerSupportTicket {
         name(nullable:false, maxSize:500)
         description(nullable:true, maxSize:1000)
         updateTime(nullable:false)
-        customer(nullable:false)
-        vendor(nullable:false)
+        creator(nullable:false)
+        assignee(nullable:false)
         ticketStatus(nullable:false)
     }
     

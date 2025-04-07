@@ -29,8 +29,9 @@
             <g:form resource="${this.vendorOnboarding}" method="PUT">
                 <g:hiddenField name="version" value="${this.vendorOnboarding?.version}" />
                 <fieldset class="form">
-                    <f:all bean="vendorOnboarding"/>
+                    <f:all bean="vendorOnboarding" except="vendor"/>
                 </fieldset>
+                <g:hiddenField name="vendor" value="${sec.loggedInUserInfo(field: 'id')}" />
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
                 </fieldset>

@@ -4,7 +4,7 @@ import security.*
 
 class CustomerOnboarding {
 
-	User customer
+	Long customer
     String firstName
 	String lastName
 	String phone

@@ -29,10 +29,11 @@
             <g:form resource="${this.customerSupportTicket}" method="PUT">
                 <g:hiddenField name="version" value="${this.customerSupportTicket?.version}" />
                 <fieldset class="form">
-                    <f:all bean="customerSupportTicket" except="ticketStatus"/>
+                    <f:all bean="customerSupportTicket" except="ticketStatus, creator"/>
                 </fieldset>
                 <div style="margin-left:27px;">
                 <f:field bean="customerSupportTicket" property="ticketStatus" widget-optionValue="ticketStatus"/>
+                <g:hiddenField name="creator" value="${sec.loggedInUserInfo(field: 'id')}" />
                 </div>
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />

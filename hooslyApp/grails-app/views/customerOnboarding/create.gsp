@@ -26,7 +26,7 @@
             </ul>
             </g:hasErrors>
             <g:form resource="${this.customerOnboarding}" method="POST">
-                <f:field bean="customerOnboarding" property="customer" widget-optionValue="username"/>
+                <g:hiddenField name="customer" value="${sec.loggedInUserInfo(field: 'id')}" />
                 <f:field bean="customerOnboarding" property="firstName"/>
                 <f:field bean="customerOnboarding" property="lastName"/>
                 <f:field bean="customerOnboarding" property="phone"/>

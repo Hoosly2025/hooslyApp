@@ -8,7 +8,7 @@ class VendorPhotos {
 	String name
 	String description
 	Date updateTime
-    User vendor
+    Long vendor
 	byte[] imageOne
 	byte[] imageTwo
 	byte[] imageThree

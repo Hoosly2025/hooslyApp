@@ -10,7 +10,7 @@ class VendorCertifications {
     Date updateTime
 	String filename
 	byte[] fileUpload
-	User vendor
+	Long vendor
 		
     static constraints = {
 		createTime(nullable:false)

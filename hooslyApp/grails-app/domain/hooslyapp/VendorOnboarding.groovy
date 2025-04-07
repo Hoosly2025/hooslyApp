@@ -4,7 +4,7 @@ import security.*
 
 class VendorOnboarding {
 
-	User vendor
+	Long vendor
     String companyName
     String primaryContactName
     String primaryContactEmail

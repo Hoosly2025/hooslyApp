@@ -24,8 +24,8 @@
             Name: <f:display bean="customerSupportTicket" property="name"/><br>
             Description: <f:display bean="customerSupportTicket" property="description"/><br>
             Update Time: <f:display bean="customerSupportTicket" property="updateTime"/><br>
-            Customer: <f:display bean="customerSupportTicket" property="customer"/><br>
-            Vendor: <f:display bean="customerSupportTicket" property="vendor"/><br>
+            Creator: <f:display bean="customerSupportTicket" property="creator"/><br>
+            Assignee: <f:display bean="customerSupportTicket" property="assignee"/><br>
             Ticket Status: <f:display bean="customerSupportTicket" property="ticketStatus.ticketStatus"/><br>
             </div>
             <g:form resource="${this.customerSupportTicket}" method="DELETE">

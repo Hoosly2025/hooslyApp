@@ -2,7 +2,7 @@ package hooslyapp
 
 class CustomerSubscriptionCurrentPlanType {
 
-	CustomerSubscription customerSubscription
+	Long customerSubscription
     CustomerSubscriptionPlan planType
 	Date subscriptionEnd
 	Boolean autoRenew

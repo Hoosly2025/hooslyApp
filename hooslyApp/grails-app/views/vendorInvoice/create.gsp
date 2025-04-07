@@ -27,8 +27,9 @@
             </g:hasErrors>
             <g:form resource="${this.vendorInvoice}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="vendorInvoice"/>
+                    <f:all bean="vendorInvoice" except="vendor"/>
                 </fieldset>
+                <g:hiddenField name="vendor" value="${sec.loggedInUserInfo(field: 'id')}" />
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>

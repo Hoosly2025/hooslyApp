@@ -10,7 +10,7 @@ class CustomerInvoice {
     Date updateTime
 	String filename
 	byte[] fileUpload
-	User customer
+	Long customer
 		
     static constraints = {
 		createTime(nullable:false)

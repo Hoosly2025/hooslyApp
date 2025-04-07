@@ -20,7 +20,7 @@
             <div class="message" role="status">${flash.message}</div>
             </g:if>
             <div style="margin-left:50px;">
-            Customer Subscription: <f:display bean="customerSubscriptionCurrentPlanType" property="customerSubscription.customer"/><br>
+            Customer Subscription: <f:display bean="customerSubscriptionCurrentPlanType" property="customerSubscription"/><br>
             Plan Type: <f:display bean="customerSubscriptionCurrentPlanType" property="planType.planName"/><br>
             Subscription End: <f:display bean="customerSubscriptionCurrentPlanType" property="subscriptionEnd"/><br>
             Auto Renew: <f:display bean="customerSubscriptionCurrentPlanType" property="autoRenew"/><br>

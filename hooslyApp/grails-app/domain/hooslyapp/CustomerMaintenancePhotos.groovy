@@ -8,7 +8,7 @@ class CustomerMaintenancePhotos {
 	String name
 	String description
 	Date updateTime
-    User customerMaintenance
+    Long customerMaintenance
 	byte[] imageOne
 	byte[] imageTwo
 	byte[] imageThree

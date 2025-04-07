@@ -26,7 +26,7 @@
             </ul>
             </g:hasErrors>
             <g:form resource="${this.vendorSubscriptionCurrentPlanType}" method="POST">
-                <f:field bean="vendorSubscriptionCurrentPlanType" property="vendorSubscription" widget-optionValue="vendor"/>
+                <g:hiddenField name="vendorSubscription" value="${sec.loggedInUserInfo(field: 'id')}" />
                 <f:field bean="vendorSubscriptionCurrentPlanType" property="planType" widget-optionValue="planName"/>
                 <f:field bean="vendorSubscriptionCurrentPlanType" property="subscriptionEnd"/>
                 <f:field bean="vendorSubscriptionCurrentPlanType" property="autoRenew"/>

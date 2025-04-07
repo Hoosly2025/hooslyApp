@@ -4,7 +4,7 @@ import security.*
 
 class CustomerMaintenance {
 
-	User customerOnboarding
+	Long customerOnboarding
     User vendorOnboarding
     
     //TODO: Maintenance Type

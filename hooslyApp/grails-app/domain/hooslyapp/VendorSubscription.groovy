@@ -4,7 +4,7 @@ import security.*
 
 class VendorSubscription {
 
-    User vendor
+    Long vendor
 
 	Date subscriptionStart
 	Date renewal
