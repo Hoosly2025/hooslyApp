@@ -31,6 +31,11 @@ class CustomerMaintenancePhotosController {
         }
 
         try {
+			def transferFile = request.getFile('myFile')
+			if(transferFile != null && !transferFile.empty) {
+				customerMaintenancePhotos.filename = transferFile.getOriginalFilename()
+				customerMaintenancePhotos.fileUpload = transferFile.getBytes()
+			}
             customerMaintenancePhotosService.save(customerMaintenancePhotos)
         } catch (ValidationException e) {
             respond customerMaintenancePhotos.errors, view:'create'
@@ -57,6 +62,11 @@ class CustomerMaintenancePhotosController {
         }
 
         try {
+			def transferFile = request.getFile('myFile')
+			if(transferFile != null && !transferFile.empty) {
+				customerMaintenancePhotos.filename = transferFile.getOriginalFilename()
+				customerMaintenancePhotos.fileUpload = transferFile.getBytes()
+			}
             customerMaintenancePhotosService.save(customerMaintenancePhotos)
         } catch (ValidationException e) {
             respond customerMaintenancePhotos.errors, view:'edit'

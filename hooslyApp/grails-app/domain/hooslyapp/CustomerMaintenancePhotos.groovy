@@ -9,9 +9,8 @@ class CustomerMaintenancePhotos {
 	String description
 	Date updateTime
     Long customerMaintenance
-	byte[] imageOne
-	byte[] imageTwo
-	byte[] imageThree
+	String filename
+	byte[] fileUpload
 	
     static constraints = {
 		createTime(nullable:false)
@@ -19,9 +18,8 @@ class CustomerMaintenancePhotos {
         description(nullable:true, maxSize:1000)
         updateTime(nullable:false)
         customerMaintenance(nullable:false)
-		imageOne(nullable:true, maxSize: 1024 * 1024 * 2)
-		imageTwo(nullable:true, maxSize: 1024 * 1024 * 2)
-		imageThree(nullable:true, maxSize: 1024 * 1024 * 2)
+		filename(nullable:true)
+		fileUpload(nullable:true, maxSize: 1073741824)
     }
     
     static mapping = {

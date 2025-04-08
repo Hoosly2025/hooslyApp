@@ -19,7 +19,15 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="customerMaintenancePhotos" />
+            <div style="margin-left:50px;">
+            Create Time: <f:display bean="customerMaintenancePhotos" property="createTime"/><br>
+            Name: <f:display bean="customerMaintenancePhotos" property="name"/><br>
+            Description: <f:display bean="customerMaintenancePhotos" property="description"/><br>
+            Filename: <f:display bean="customerMaintenancePhotos" property="filename"/><br>
+            CustomerMaintenance: <f:display bean="customerMaintenancePhotos" property="customerMaintenance"/><br>
+            Update Time: <f:display bean="customerMaintenancePhotos" property="updateTime"/><br>
+            <img src="data:image/jpg;base64,${customerMaintenancePhotos.fileUpload?.encodeBase64()}"/>
+            </div>
             <g:form resource="${this.customerMaintenancePhotos}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.customerMaintenancePhotos}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
