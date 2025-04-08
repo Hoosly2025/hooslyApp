@@ -31,6 +31,11 @@ class VendorPhotosController {
         }
 
         try {
+			def transferFile = request.getFile('myFile')
+			if(transferFile != null && !transferFile.empty) {
+				vendorPhotos.filename = transferFile.getOriginalFilename()
+				vendorPhotos.fileUpload = transferFile.getBytes()
+			}
             vendorPhotosService.save(vendorPhotos)
         } catch (ValidationException e) {
             respond vendorPhotos.errors, view:'create'
@@ -57,6 +62,11 @@ class VendorPhotosController {
         }
 
         try {
+			def transferFile = request.getFile('myFile')
+			if(transferFile != null && !transferFile.empty) {
+				vendorPhotos.filename = transferFile.getOriginalFilename()
+				vendorPhotos.fileUpload = transferFile.getBytes()
+			}
             vendorPhotosService.save(vendorPhotos)
         } catch (ValidationException e) {
             respond vendorPhotos.errors, view:'edit'
