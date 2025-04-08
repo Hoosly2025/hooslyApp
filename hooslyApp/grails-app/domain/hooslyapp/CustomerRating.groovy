@@ -1,16 +1,14 @@
 package hooslyapp
 
-import security.*
+class CustomerRating {
 
-class CustomerMaintenanceRating {
-
-	Long customerMaintenance
+    Long customer
 	Long reviewer
     Integer maintenanceRating
 	String maintenanceReview
 	
     static constraints = {
-		customerMaintenance(nullable:false)
+		customer(nullable:false)
 		reviewer(nullable:false)
 		maintenanceRating(nullable:true)
 		maintenanceReview(nullable:true, maxSize:500)

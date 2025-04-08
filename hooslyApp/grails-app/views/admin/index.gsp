@@ -85,6 +85,9 @@
                     <li class="controller">
                         <g:link controller="customerInvoice" action="index">Customer Invoice</g:link>
                     </li>
+                    <li class="controller">
+                		<g:link controller="customerRating" action="index">Customer Rating</g:link>
+            		</li>
                 	<h3>Vendor Administration:</h3>
                 	<li class="controller">
                         <g:link controller="vendorOnboardingCategories" action="index">Vendor Onboarding Categories</g:link>
@@ -119,6 +122,9 @@
                     <li class="controller">
                         <g:link controller="vendorInvoice" action="index">Vendor Invoice</g:link>
                     </li>
+                    <li class="controller">
+                		<g:link controller="vendorRating" action="index">Vendor Rating</g:link>
+            		</li>
                     <a class="home" href="${createLink(uri: '/')}"><h3>< Back to Homepage</h3></a>
                     <br>
                     <g:form controller="logout">

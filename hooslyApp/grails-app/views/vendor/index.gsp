@@ -45,6 +45,9 @@
                 		<g:link controller="vendorInvoice" action="index">Vendor Invoice</g:link>
             		</li>
             <li class="controller">
+                		<g:link controller="vendorRating" action="index">Vendor Rating</g:link>
+            		</li>		
+            <li class="controller">
                 		<g:link controller="customerSupportTicket" action="index">Customer Support Ticket</g:link>
             </li>
 		<a class="home" href="${createLink(uri: '/')}"><h3>< Back to Homepage</h3></a>
