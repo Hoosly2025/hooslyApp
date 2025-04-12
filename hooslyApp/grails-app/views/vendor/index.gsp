@@ -46,7 +46,10 @@
             		</li>
             <li class="controller">
                 		<g:link controller="vendorRating" action="index">Vendor Rating</g:link>
-            		</li>		
+            		</li>	
+            <li class="controller">
+                		<g:link controller="vendorVideos" action="index">Vendor Videos</g:link>
+            		</li>	
             <li class="controller">
                 		<g:link controller="customerSupportTicket" action="index">Customer Support Ticket</g:link>
             </li>
