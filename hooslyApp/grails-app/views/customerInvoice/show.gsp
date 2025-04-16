@@ -19,7 +19,11 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="customerInvoice" />
+            <f:display bean="customerInvoice" except="fileUpload"/>
+            <div style="margin-left:400px;">
+            <g:link action="download" resource="${this.customerInvoice}">Download Invoice</g:link>
+            <g:link action="invoice" resource="${this.customerInvoice}">Generate Invoice</g:link>
+            </div>
             <g:form resource="${this.customerInvoice}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.customerInvoice}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

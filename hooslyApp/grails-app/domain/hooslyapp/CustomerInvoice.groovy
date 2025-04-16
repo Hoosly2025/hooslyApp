@@ -11,6 +11,7 @@ class CustomerInvoice {
 	String filename
 	byte[] fileUpload
 	Long customer
+	String invoiceNumber
 		
     static constraints = {
 		createTime(nullable:false)
@@ -20,6 +21,7 @@ class CustomerInvoice {
 		filename(nullable:true)
 		fileUpload(nullable:true, maxSize: 1073741824)
 		customer(nullable:false)
+		invoiceNumber(nullable:true)
     }
     
     static mapping = {

@@ -74,7 +74,9 @@ dependencies {
     testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:3.14.0"
     compile 'org.grails.plugins:spring-security-core:4.0.4'
     compile 'org.grails.plugins:spring-security-ui:4.0.0-RC1'
-    
+    compile group: 'org.xhtmlrenderer', name: 'flying-saucer-core', version: '9.1.6' //class org.xhtmlrenderer.simple.Graphics2DRenderer
+    compile group: 'io.github.msalaslo', name: 'flying-saucer-pdf', version: '9.1.20' //class org/xhtmlrenderer/pdf/ITextRenderer
+    compile 'org.grails.plugins:rendering:2.0.3'
 }
 
 bootRun {

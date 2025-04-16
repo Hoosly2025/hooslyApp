@@ -29,9 +29,9 @@
             <g:form resource="${this.customerSubscription}" method="PUT">
                 <g:hiddenField name="version" value="${this.customerSubscription?.version}" />
                 <fieldset class="form">
-                    <f:all bean="customerSubscription" except="customerId"/>
+                    <f:all bean="customerSubscription" except="customer"/>
                 </fieldset>
-                <g:hiddenField name="customerId" value="${customerSubscription?.customerId}" />
+                <g:hiddenField name="customer" value="${customerSubscription?.customer}" />
                 <fieldset class="buttons">
                     <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
                 </fieldset>

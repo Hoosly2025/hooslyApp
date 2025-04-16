@@ -4,7 +4,7 @@ import security.*
 
 class CustomerSubscription {
 
-    Long customerId
+    Long customer
 
 	Date subscriptionStart
 	Date renewal
@@ -13,7 +13,7 @@ class CustomerSubscription {
 	Date nextBilling
 	
     static constraints = {
-		customerId(nullable:false)
+		customer(nullable:false)
 	    subscriptionStart(nullable:false)
         renewal(nullable:false)	
 		paymentMethod(nullable:false, maxSize:100)
