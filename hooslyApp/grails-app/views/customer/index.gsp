@@ -54,6 +54,9 @@
             		<li class="controller">
                 		<g:link controller="customerVideos" action="index">Customer Videos</g:link>
             		</li>
+            		<li class="controller">
+                		<g:link controller="customerMaintenanceInvoice" action="index">Customer Maintenance Invoice</g:link>
+            		</li>
 		<a class="home" href="${createLink(uri: '/')}"><h3>< Back to Homepage</h3></a>
 		<g:link controller="customer" action="profile" id="${sec.loggedInUserInfo(field: 'id')}"><h3>Customer Profile ></h3></g:link>
         <g:form controller="logout">

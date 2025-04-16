@@ -21,7 +21,7 @@
 										<section class="box">
 										<asset:image src="liveoakhomefooter.png" alt="Hoosly Logo"/>
 										<header>
-											<p><span style="font-size:35px;color:#000000">Invoice</span></p>
+											<p><span style="font-size:35px;color:#000000">Customer Invoice</span></p>
 										</header>
 										<g:if test="${customerInvoice}">
 										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Invoice Number: <f:display bean="customerInvoice" property="invoiceNumber"/></span></p>

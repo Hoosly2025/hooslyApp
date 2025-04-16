@@ -20,6 +20,8 @@ class CustomerMaintenance {
     
     Double costDetails
     
+    String paymentMethod
+    
     static constraints = {
 		customerOnboarding(nullable:false)
 		vendorOnboarding(nullable:true)
@@ -30,6 +32,7 @@ class CustomerMaintenance {
         maintenanceScheduledDate(nullable:false)
         maintenanceCompletionDate(nullable:false)
         costDetails(nullable:true)
+        paymentMethod(nullable:true)
         
     }
     

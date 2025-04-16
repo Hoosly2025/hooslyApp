@@ -91,6 +91,9 @@
             		<li class="controller">
                 		<g:link controller="customerVideos" action="index">Customer Videos</g:link>
             		</li>
+            		<li class="controller">
+                		<g:link controller="customerMaintenanceInvoice" action="index">Customer Maintenance Invoice</g:link>
+            		</li>
                 	<h3>Vendor Administration:</h3>
                 	<li class="controller">
                         <g:link controller="vendorOnboardingCategories" action="index">Vendor Onboarding Categories</g:link>

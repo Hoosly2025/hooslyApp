@@ -21,7 +21,9 @@
             </g:if>
             <f:display bean="vendorInvoice" except="fileUpload"/>
             <div style="margin-left:400px;">
+            <g:if test="${vendorInvoice.fileUpload}">
             <g:link action="download" resource="${this.vendorInvoice}">Download Invoice</g:link>
+            </g:if>
             <g:link action="invoice" resource="${this.vendorInvoice}">Generate Invoice</g:link>
             </div>
             <g:form resource="${this.vendorInvoice}" method="DELETE">

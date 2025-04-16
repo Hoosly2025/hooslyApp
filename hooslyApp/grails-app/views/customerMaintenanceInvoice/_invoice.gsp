@@ -2,7 +2,7 @@
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 	<head>
-	<title>Vendor Invoice</title>
+	<title>Customer Maintenance Invoice</title>
 	</head>
 	<body class="homepage">
 	
@@ -21,21 +21,31 @@
 										<section class="box">
 										<asset:image src="liveoakhomefooter.png" alt="Hoosly Logo"/>
 										<header>
-											<p><span style="font-size:35px;color:#000000">Vendor Invoice</span></p>
+											<p><span style="font-size:35px;color:#000000">Customer Maintenance Invoice</span></p>
 										</header>
-										<g:if test="${vendorInvoice}">
-										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Invoice Number: ${invoiceNumber}</span></p>
-										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Date: <f:display bean="vendorInvoice" property="createTime"/></span></p>
-										</g:if>
-										<g:if test="${vendorSubscription}">
-										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Subscription Start: <f:display bean="vendorSubscription" property="subscriptionStart"/></span></p>
-										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Renewal: <f:display bean="vendorSubscription" property="renewal"/></span></p>
-										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Payment Method: <f:display bean="vendorSubscription" property="paymentMethod"/></span></p>
-										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Last Payment: <f:display bean="vendorSubscription" property="lastPayment"/></span></p>
-										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Next Billing: <f:display bean="vendorSubscription" property="nextBilling"/></span></p>
+										<g:if test="${customerMaintenanceInvoice}">
+										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Invoice Number: <f:display bean="customerMaintenanceInvoice" property="invoiceNumber"/></span></p>
+										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Date: <f:display bean="customerMaintenanceInvoice" property="createTime"/></span></p>
+										</g:if>	
+										<g:if test="${customerMaintenance}">
+										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Maintenance Details: <f:display bean="customerMaintenance" property="maintenanceDetails"/></span></p>
+										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Maintenance Completion Date: <f:display bean="customerMaintenance" property="maintenanceCompletionDate"/></span></p>
+										<br></br>
+										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Total Due: <f:display bean="customerMaintenance" property="costDetails"/></span></p>
 										</g:if>
 										<br></br>
 										<p><span style="font-size:30px;color:#000000">Billed to:</span></p>
+										<g:if test="${customerOnboarding}">
+										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">First name: <f:display bean="customerOnboarding" property="firstName"/></span></p>
+										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Last name: <f:display bean="customerOnboarding" property="lastName"/></span></p>
+										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Phone: <f:display bean="customerOnboarding" property="phone"/></span></p>
+										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Street Address: <f:display bean="customerOnboarding" property="streetAddress"/></span></p>
+										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">City: <f:display bean="customerOnboarding" property="city"/></span></p>
+										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">State: <f:display bean="customerOnboarding" property="state"/></span></p>
+										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Zip Code: <f:display bean="customerOnboarding" property="zipCode"/></span></p>
+										</g:if>
+										<br></br>
+										<p><span style="font-size:30px;color:#000000">Vendor Details:</span></p>
 										<g:if test="${vendorOnboarding}">
 										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Company Name: <f:display bean="vendorOnboarding" property="companyName"/></span></p>
 										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Primary Contact Name: <f:display bean="vendorOnboarding" property="primaryContactName"/></span></p>
@@ -45,14 +55,6 @@
 										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Business City: <f:display bean="vendorOnboarding" property="businessCity"/></span></p>
 										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Business State: <f:display bean="vendorOnboarding" property="businessState"/></span></p>
 										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Business Zip Code: <f:display bean="vendorOnboarding" property="businessZipCode"/></span></p>
-										</g:if>
-										<br></br>
-										<p><span style="font-size:30px;color:#000000">Service Plan:</span></p>
-										<g:if test="${vendorSubscriptionPlan}">
-										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Plan name: <f:display bean="vendorSubscriptionPlan" property="planName"/></span></p>
-										<p><span style="font-size:20px;color:#000000;font-family: Arial, Helvetica, sans-serif;">Plan Fee: <f:display bean="vendorSubscriptionPlan" property="planFee"/></span></p>
-										<br></br>
-										<p><span style="font-size:30px;color:#000000">Total Due: ${vendorSubscriptionPlan.planFee}</span></p>
 										</g:if>
 										<br></br>
 										<p><span style="font-size:30px;color:#000000">Payment Options:</span></p>
