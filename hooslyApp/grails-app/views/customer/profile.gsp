@@ -23,7 +23,7 @@
 		<p>
 		<g:if test="${customerOnboarding}">
         <div id="show-customerOnboarding" class="content scaffold-show" role="main">
-        	<div style="margin-left:400px;">
+        	<div style="margin-left:200px;">
         	<p><span style="font-size:25px;color:#000000">Customer Details:</span></p>
             Customer: <f:display bean="customerOnboarding" property="customer"/><br>
             First Name: <f:display bean="customerOnboarding" property="firstName"/><br>
@@ -43,7 +43,7 @@
             </div>
         </g:if>
         <g:if test="${customerPhotos}">
-        <div style="margin-left:400px;">
+        <div style="margin-left:200px;">
         <p><span style="font-size:55px;color:#000000">Customer Photos:</span></p>
         <g:each in="${customerPhotos}" status="j" var="customerPhotosInstance">
         <img src="data:image/jpg;base64,${customerPhotosInstance.fileUpload?.encodeBase64()}"/>
@@ -51,7 +51,7 @@
         </div>
         </g:if>
         <g:if test="${customerVideos}">
-        <div style="margin-left:400px;">
+        <div style="margin-left:200px;">
         <p><span style="font-size:25px;color:#000000">Customer Videos:</span></p>
         <g:each in="${customerVideos}" status="j" var="customerVideosInstance">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/${customerVideosInstance.video}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
