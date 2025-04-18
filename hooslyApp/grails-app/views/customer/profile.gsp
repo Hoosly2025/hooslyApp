@@ -44,7 +44,7 @@
         </g:if>
         <g:if test="${customerPhotos}">
         <div style="margin-left:200px;">
-        <p><span style="font-size:55px;color:#000000">Customer Photos:</span></p>
+        <p><span style="font-size:25px;color:#000000">Customer Photos:</span></p>
         <g:each in="${customerPhotos}" status="j" var="customerPhotosInstance">
         <img src="data:image/jpg;base64,${customerPhotosInstance.fileUpload?.encodeBase64()}"/>
         </g:each>
