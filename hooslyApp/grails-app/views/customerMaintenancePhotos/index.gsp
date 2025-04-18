@@ -18,7 +18,7 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${customerMaintenancePhotosList}" />
+            <f:table collection="${customerMaintenancePhotosList}" except="fileUpload"/>
 
             <div class="pagination">
                 <g:paginate total="${customerMaintenancePhotosCount ?: 0}" />
