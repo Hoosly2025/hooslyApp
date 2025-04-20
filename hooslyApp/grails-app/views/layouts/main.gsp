@@ -45,12 +45,6 @@
         <p>Management.</p>
 
     </div>
-
-    <div class="col">
-        <g:link controller="admin" action="index"><asset:image src="slack.svg" alt="Administration" class="float-left"/></g:link>
-        <strong class="centered"><g:link controller="admin" action="index">Administration</g:link></strong>
-        <p>Dashboard.</p>
-    </div>
 </div>
 
 

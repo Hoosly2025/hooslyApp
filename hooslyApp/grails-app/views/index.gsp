@@ -13,7 +13,7 @@
         <p><span style="font-size:55px;color:#ffffff">Taking Care of Home</span></p>
         <br><br>
         
-        <p><span style="font-size:30px;color:#ffffff">Maximize the Joy of Home Ownership with our Comprehensive Solution to Home Maintenance.</span></p>        
+        <p><span style="font-size:30px;color:#ffffff">Maximize the Joy of Home Ownership with our Comprehensive Solution to Home Maintenance.</span></p>    
     </div>
 </div>
 
@@ -27,7 +27,9 @@
             <g:link controller="vendor" action="index">Vendors</g:link> - Sign up, onboard and register business with various categories. 
             <br><br>
             <g:link controller="admin" action="index">Admin Dashboard</g:link> - Comprehensive, oversight of business and analytics.
+            <br><br>
         </p>
+        
     </section>
 </div>
 
