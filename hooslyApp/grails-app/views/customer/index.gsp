@@ -25,16 +25,31 @@
         	<ul>
         	<h3>Customer Services:</h3>
             		<li class="controller">
-                        <g:link controller="customerOnboarding" action="index">Customer Onboarding</g:link>
+            			<g:if test="${customerOnboarding != null}">
+                        <g:link controller="customerOnboarding" action="edit" id="${customerOnboarding.id}">Edit Customer Onboarding</g:link>
+                        </g:if>
+                        <g:else>
+                        <g:link controller="customerOnboarding" action="create">Create Customer Onboarding</g:link>
+                        </g:else>
                     </li>
                     <li class="controller">
                         <g:link controller="customerMaintenance" action="index">Customer Maintenance</g:link>
                     </li>
                     <li class="controller">
-                        <g:link controller="customerSubscription" action="index">Customer Subscription</g:link>
+                    	<g:if test="${customerSubscription != null}">
+                        <g:link controller="customerSubscription" action="edit" id="${customerSubscription.id}">Edit Customer Subscription</g:link>
+                        </g:if>
+                        <g:else>
+                        <g:link controller="customerSubscription" action="create">Create Customer Subscription</g:link>
+                        </g:else>
                     </li>
                     <li class="controller">
-                        <g:link controller="customerSubscriptionCurrentPlanType" action="index">Customer Subscription Current Plan Type</g:link>
+                        <g:if test="${customerSubscriptionCurrentPlanType != null}">
+                        <g:link controller="customerSubscriptionCurrentPlanType" action="edit" id="${customerSubscriptionCurrentPlanType.id}">Edit Customer Subscription Plan</g:link>
+                        </g:if>
+                        <g:else>
+                        <g:link controller="customerSubscriptionCurrentPlanType" action="create">Create Customer Subscription Plan</g:link>
+                        </g:else>
                     </li>
                     <li class="controller">
                         <g:link controller="customerPhotos" action="index">Customer Photos</g:link>
@@ -49,9 +64,6 @@
                         <g:link controller="customerInvoice" action="index">Customer Invoice</g:link>
                     </li>
                     <li class="controller">
-                		<g:link controller="customerRating" action="index">Customer Rating</g:link>
-            		</li>
-            		<li class="controller">
                 		<g:link controller="customerVideos" action="index">Customer Videos</g:link>
             		</li>
             		<li class="controller">

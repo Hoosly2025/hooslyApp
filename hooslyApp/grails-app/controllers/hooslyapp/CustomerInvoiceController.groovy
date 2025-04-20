@@ -42,7 +42,6 @@ class CustomerInvoiceController {
 	
 	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS'])
 	def invoice(Long id) {
-		System.out.println("Inside invoice: id = " + id)
 		//create the customerInvoice object and invoice download can be on the show invoice
 		//create the invoice number, Invoice #: HOOSLY-[YYYYMMDD]-[VENDOR_ID], which is id passed in
 		
@@ -58,15 +57,11 @@ class CustomerInvoiceController {
 		
 		def invoiceNumber = "HOOSLY-" + yearStr + monthStr + dayStr + "-" + id
 		
-		System.out.println("invoice number = " + invoiceNumber)
-		
 		def customerInvoice = CustomerInvoice.findById(id)
 		
 		customerInvoice.invoiceNumber = invoiceNumber
 		
 		def filename = "INVOICE-CUSTOMER-" + invoiceNumber + ".pdf"
-		
-		System.out.println("filename = " + filename)
 		
 		//Get the customer details from customer onboarding object
 		

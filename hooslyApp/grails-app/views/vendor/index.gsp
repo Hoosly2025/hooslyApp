@@ -24,13 +24,28 @@
         <div id="controllers" role="navigation">
         	<ul>
         	<li class="controller">
-                        <g:link controller="vendorOnboarding" action="index">Vendor Onboarding</g:link>
+                        <g:if test="${vendorOnboarding != null}">
+                        <g:link controller="vendorOnboarding" action="edit" id="${vendorOnboarding.id}">Edit Vendor Onboarding</g:link>
+                        </g:if>
+                        <g:else>
+                        <g:link controller="vendorOnboarding" action="create">Create Vendor Onboarding</g:link>
+                        </g:else>
                     </li>
             <li class="controller">
-                        <g:link controller="vendorSubscription" action="index">Vendor Subscription</g:link>
+                        <g:if test="${vendorSubscription != null}">
+                        <g:link controller="vendorSubscription" action="edit" id="${vendorSubscription.id}">Edit Vendor Subscription</g:link>
+                        </g:if>
+                        <g:else>
+                        <g:link controller="vendorSubscription" action="create">Create Vendor Subscription</g:link>
+                        </g:else>
                     </li>      
             <li class="controller">
-                        <g:link controller="vendorSubscriptionCurrentPlanType" action="index">Vendor Subscription Current Plan Type</g:link>
+                        <g:if test="${vendorSubscriptionCurrentPlanType != null}">
+                        <g:link controller="vendorSubscriptionCurrentPlanType" action="edit" id="${vendorSubscriptionCurrentPlanType.id}">Edit Vendor Subscription Plan</g:link>
+                        </g:if>
+                        <g:else>
+                        <g:link controller="vendorSubscriptionCurrentPlanType" action="create">Create Vendor Subscription Plan</g:link>
+                        </g:else>
                     </li>
             <li class="controller">
                         <g:link controller="vendorPhotos" action="index">Vendor Photos</g:link>

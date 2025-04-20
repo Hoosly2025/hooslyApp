@@ -42,7 +42,6 @@ class CustomerMaintenanceInvoiceController {
 	
 	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS'])
 	def invoice(Long id) {
-		System.out.println("Inside invoice: id = " + id)
 		//create the customerInvoice object and invoice download can be on the show invoice
 		//create the invoice number, Invoice #: HOOSLY-[YYYYMMDD]-[VENDOR_ID], which is id passed in
 		
@@ -58,15 +57,11 @@ class CustomerMaintenanceInvoiceController {
 		
 		def invoiceNumber = "HOOSLY-MAINTENANCE-" + yearStr + monthStr + dayStr + "-" + id
 		
-		System.out.println("invoice number = " + invoiceNumber)
-		
 		def customerMaintenanceInvoice = CustomerMaintenanceInvoice.findById(id)
 		
 		customerMaintenanceInvoice.invoiceNumber = invoiceNumber
 		
 		def filename = "INVOICE-CUSTOMER-" + invoiceNumber + ".pdf"
-		
-		System.out.println("filename = " + filename)
 		
 		//Get the customer details from customer onboarding object
 		
@@ -74,21 +69,17 @@ class CustomerMaintenanceInvoiceController {
 			
 			def customerOnboarding = CustomerOnboarding.findByCustomer(customerMaintenanceInvoice.customer)
 			
-			System.out.println("customer onboarding")
 			//TODO: Get the hoosly business details from Jermane
 			
 			//Get the customer maintenance details
 			
 			if (customerOnboarding != null) {
 				def customerMaintenance = customerMaintenanceInvoice.customerMaintenance
-				System.out.println("customer maintenance")
 				if (customerMaintenance != null) {
 					def vendor = customerMaintenance.vendorOnboarding
-					System.out.println("vendor")
 					if (vendor != null) {
 						def vendorOnboarding = VendorOnboarding.findByVendor(vendor.id)
 						
-						System.out.println("vendor onboarding")
 						def mypdf = new ByteArrayOutputStream().withStream { outputStream ->
 							pdfRenderingService.render(
 								[controller:this,
