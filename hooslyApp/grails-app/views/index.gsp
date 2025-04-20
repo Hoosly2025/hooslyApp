@@ -24,7 +24,7 @@
         <p>
             <g:link controller="customer" action="index">Customers</g:link> - Sign up, onboard and start creating maintenance tasks. 
             <br><br>
-            <g:link controller="vendor" action="index">Vendors</g:link> - Sign up, onboard and register business with various categories. 
+            <g:link controller="vendor" action="index">Vendors</g:link> - Sign up, onboard and manage business with various categories. 
             <br><br>
             <g:link controller="admin" action="index">Admin Dashboard</g:link> - Comprehensive, oversight of business and analytics.
             <br><br>

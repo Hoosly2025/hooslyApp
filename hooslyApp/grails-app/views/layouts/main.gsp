@@ -36,7 +36,7 @@
     <div class="col">
         <g:link controller="customer" action="index"><asset:image src="advancedgrails.svg" alt="Customers" class="float-left"/></g:link>
         <strong class="centered"><g:link controller="customer" action="index">Customers</g:link></strong>
-        <p>Onboarding.</p>
+        <p>Maintenance.</p>
 
     </div>
     <div class="col">
