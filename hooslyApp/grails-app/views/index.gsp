@@ -9,7 +9,11 @@
 
 <div class="svg" role="presentation">
     <div class="grails-logo-container">
-        <asset:image src="liveoakhome-3.png" class="grails-logo"/>
+    	<br><br>
+        <p><span style="font-size:55px;color:#ffffff">Taking Care of Home</span></p>
+        <br><br>
+        
+        <p><span style="font-size:30px;color:#ffffff">Maximize the Joy of Home Ownership with our Comprehensive Solution to Home Maintenance.</span></p>        
     </div>
 </div>
 
@@ -18,11 +22,11 @@
         <h1>Welcome to Hoosly</h1>
 
         <p>
-            <g:link controller="customer" action="index">Customers</g:link> - Create a user with our onboarding, input home details, setup preferences, choose a subscription price, automated reminder and scheduling tasks, AI chatbot for homeowner queries, recommend services and facilitate bookings, request repair service, vendor matching and real-time tracking of service appointments. 
+            <g:link controller="customer" action="index">Customers</g:link> - Sign up, onboard and start creating maintenance tasks. 
             <br><br>
-            <g:link controller="vendor" action="index">Vendors</g:link> - Vendors can manage services, appointments and payments with onboarding, subscription billing, access service requests, dashboard to accept, track and complete service requests efficiently. 
+            <g:link controller="vendor" action="index">Vendors</g:link> - Sign up, onboard and register business with various categories. 
             <br><br>
-            <g:link controller="admin" action="index">Admin Dashboard</g:link> - Business oversight, analytics, communication, real-time performance, service request tracking, subscription insights, service issues, ticketing system for customer complaints, escalations, system performance monitoring, error reporting, customer engagement, promotions and vendor relationship management.
+            <g:link controller="admin" action="index">Admin Dashboard</g:link> - Comprehensive, oversight of business and analytics.
         </p>
     </section>
 </div>
