@@ -32,10 +32,7 @@
                         <g:link controller="customerOnboarding" action="create">Create Customer Onboarding</g:link>
                         </g:else>
                     </li>
-                    <li class="controller">
-                        <g:link controller="customerMaintenance" action="index">Customer Maintenance</g:link>
-                    </li>
-                    <li class="controller">
+  					<li class="controller">
                     	<g:if test="${customerSubscription != null}">
                         <g:link controller="customerSubscription" action="edit" id="${customerSubscription.id}">Edit Customer Subscription</g:link>
                         </g:if>
@@ -50,6 +47,9 @@
                         <g:else>
                         <g:link controller="customerSubscriptionCurrentPlanType" action="create">Create Customer Subscription Plan</g:link>
                         </g:else>
+                    </li>
+                    <li class="controller">
+                        <g:link controller="customerMaintenance" action="index">Customer Maintenance</g:link>
                     </li>
                     <li class="controller">
                         <g:link controller="customerPhotos" action="index">Customer Photos</g:link>

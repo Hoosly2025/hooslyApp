@@ -3,6 +3,7 @@ package hooslyapp
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
+import org.springframework.security.core.context.SecurityContextHolder
 
 @Secured(['ROLE_ADMIN', 'ROLE_USER'])
 class CustomerMaintenanceController {
@@ -12,8 +13,33 @@ class CustomerMaintenanceController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond customerMaintenanceService.list(params), model:[customerMaintenanceCount: customerMaintenanceService.count()]
+		
+		params.max = Math.min(max ?: 10, 100)
+	        		
+		def authentication = SecurityContextHolder.getContext().getAuthentication()
+
+	    if (authentication != null) {
+			
+			def userDetails = authentication.getPrincipal()
+			
+			def authorities = userDetails.authorities
+				def customerMaintenanceList
+				
+                if (authorities?.any { it.authority == 'ROLE_ADMIN' }) {
+                    // User has ADMIN role
+                    respond userDetails, model:[customerMaintenanceList: customerMaintenanceService.list(params), customerMaintenanceCount: customerMaintenanceService.count()]
+                } else {
+					def userId = userDetails.id
+					customerMaintenanceList = CustomerMaintenance.findAllByCustomerOnboarding(userId)
+					def customerMaintenanceCount = 0
+					
+					if (customerMaintenanceList != null && customerMaintenanceList.size() > 0) {
+						customerMaintenanceCount = customerMaintenanceList.size()
+					}
+					respond userDetails, model:[customerMaintenanceList: customerMaintenanceList, customerMaintenanceCount: customerMaintenanceCount]
+				}
+	        
+    	}
     }
 
     def show(Long id) {

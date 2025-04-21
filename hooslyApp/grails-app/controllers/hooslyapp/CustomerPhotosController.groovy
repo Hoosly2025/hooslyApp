@@ -3,6 +3,7 @@ package hooslyapp
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
+import org.springframework.security.core.context.SecurityContextHolder
 
 @Secured(['ROLE_ADMIN', 'ROLE_USER'])
 class CustomerPhotosController {
@@ -13,7 +14,32 @@ class CustomerPhotosController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond customerPhotosService.list(params), model:[customerPhotosCount: customerPhotosService.count()]
+	        		
+		def authentication = SecurityContextHolder.getContext().getAuthentication()
+
+	    if (authentication != null) {
+			
+			def userDetails = authentication.getPrincipal()
+			
+			def authorities = userDetails.authorities
+				def customerPhotosList
+				
+                if (authorities?.any { it.authority == 'ROLE_ADMIN' }) {
+                    // User has ADMIN role
+                    respond userDetails, model:[customerPhotosList: customerPhotosService.list(params), customerPhotosCount: customerPhotosService.count()]
+                } else {
+					def userId = userDetails.id
+					customerPhotosList = CustomerPhotos.findAllByCustomer(userId)
+					def customerPhotosCount = 0
+					
+					if (customerPhotosList != null && customerPhotosList.size() > 0) {
+						customerPhotosCount = customerPhotosList.size()
+					}
+					respond userDetails, model:[customerPhotosList: customerPhotosList, customerPhotosCount: customerPhotosCount]
+				}
+	        
+    	}
+
     }
 
     def show(Long id) {

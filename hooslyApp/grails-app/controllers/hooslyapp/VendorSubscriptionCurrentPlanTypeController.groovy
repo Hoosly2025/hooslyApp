@@ -11,6 +11,7 @@ class VendorSubscriptionCurrentPlanTypeController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+	@Secured(['ROLE_ADMIN'])
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond vendorSubscriptionCurrentPlanTypeService.list(params), model:[vendorSubscriptionCurrentPlanTypeCount: vendorSubscriptionCurrentPlanTypeService.count()]
