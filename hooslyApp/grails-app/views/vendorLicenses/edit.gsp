@@ -35,7 +35,7 @@
                  <fieldset style="margin-left:340px;">
                 	<div style="float:left;width:50" class="post"><h4>Upload Vendor License:</h4></div>
                 	<br>
-              				Please upload a pdf.<br>
+              				Please upload a file.<br>
               		<div>
                   <input type="file" name="myFile" />
               </div>	

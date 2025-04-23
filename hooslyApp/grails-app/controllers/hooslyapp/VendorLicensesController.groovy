@@ -3,6 +3,7 @@ package hooslyapp
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
+import org.springframework.security.core.context.SecurityContextHolder
 
 @Secured(['ROLE_ADMIN', 'ROLE_USER'])
 class VendorLicensesController {
@@ -13,8 +14,34 @@ class VendorLicensesController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond vendorLicensesService.list(params), model:[vendorLicensesCount: vendorLicensesService.count()]
+	        		
+		def authentication = SecurityContextHolder.getContext().getAuthentication()
+
+	    if (authentication != null) {
+			
+			def userDetails = authentication.getPrincipal()
+			
+			def authorities = userDetails.authorities
+				def vendorLicensesList
+				
+                if (authorities?.any { it.authority == 'ROLE_ADMIN' }) {
+                    // User has ADMIN role
+                    respond userDetails, model:[vendorLicensesList: vendorLicensesService.list(params), vendorLicensesCount: vendorLicensesService.count()]
+                } else {
+					def userId = userDetails.id
+					vendorLicensesList = VendorLicenses.findAllByVendor(userId)
+					def vendorLicensesCount = 0
+					
+					if (vendorLicensesList != null && vendorLicensesList.size() > 0) {
+						vendorLicensesCount = vendorLicensesList.size()
+					}
+					respond userDetails, model:[vendorLicensesList: vendorLicensesList, vendorLicensesCount: vendorLicensesCount]
+				}
+	        
+    	}
+
     }
+
 
     def show(Long id) {
         respond vendorLicensesService.get(id)

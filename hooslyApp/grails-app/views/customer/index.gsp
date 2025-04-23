@@ -23,7 +23,7 @@
 		<p>
         <div id="controllers" role="navigation">
         	<ul>
-        	<h3>Customer Services:</h3>
+        	<h3>Customer Subscription & Onboarding:</h3>
             		<li class="controller">
             			<g:if test="${customerOnboarding != null}">
                         <g:link controller="customerOnboarding" action="edit" id="${customerOnboarding.id}">Edit Customer Onboarding</g:link>
@@ -48,9 +48,7 @@
                         <g:link controller="customerSubscriptionCurrentPlanType" action="create">Create Customer Subscription Plan</g:link>
                         </g:else>
                     </li>
-                    <li class="controller">
-                        <g:link controller="customerMaintenance" action="index">Customer Maintenance</g:link>
-                    </li>
+           <h3>Customer Content:</h3>
                     <li class="controller">
                         <g:link controller="customerPhotos" action="index">Customer Photos</g:link>
                     </li>
@@ -58,17 +56,21 @@
                         <g:link controller="customerMaintenancePhotos" action="index">Customer Maintenance Photos</g:link>
                     </li>
                     <li class="controller">
-                        <g:link controller="customerSupportTicket" action="index">Customer Support Ticket</g:link>
+                		<g:link controller="customerVideos" action="index">Customer Videos</g:link>
+            		</li>
+           <h3>Customer Services:</h3>
+           			<li class="controller">
+                        <g:link controller="customerMaintenance" action="index">Customer Maintenance</g:link>
                     </li>
                     <li class="controller">
                         <g:link controller="customerInvoice" action="index">Customer Invoice</g:link>
                     </li>
                     <li class="controller">
-                		<g:link controller="customerVideos" action="index">Customer Videos</g:link>
-            		</li>
-            		<li class="controller">
                 		<g:link controller="customerMaintenanceInvoice" action="index">Customer Maintenance Invoice</g:link>
             		</li>
+            		<li class="controller">
+                        <g:link controller="customerSupportTicket" action="index">Customer Support Ticket</g:link>
+                    </li>
 		<a class="home" href="${createLink(uri: '/')}"><h3>< Back to Homepage</h3></a>
 		<g:link controller="customer" action="profile" id="${sec.loggedInUserInfo(field: 'id')}"><h3>Customer Profile ></h3></g:link>
         <g:form controller="logout">

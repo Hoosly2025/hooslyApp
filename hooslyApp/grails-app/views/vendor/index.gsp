@@ -23,6 +23,7 @@
 		<p>
         <div id="controllers" role="navigation">
         	<ul>
+        	<h3>Vendor Subscription & Onboarding:</h3>
         	<li class="controller">
                         <g:if test="${vendorOnboarding != null}">
                         <g:link controller="vendorOnboarding" action="edit" id="${vendorOnboarding.id}">Edit Vendor Onboarding</g:link>
@@ -47,6 +48,7 @@
                         <g:link controller="vendorSubscriptionCurrentPlanType" action="create">Create Vendor Subscription Plan</g:link>
                         </g:else>
                     </li>
+            <h3>Vendor Content:</h3>
             <li class="controller">
                         <g:link controller="vendorPhotos" action="index">Vendor Photos</g:link>
                     </li>
@@ -57,14 +59,12 @@
                         <g:link controller="vendorLicenses" action="index">Vendor Licenses</g:link>
                     </li>  
             <li class="controller">
-                		<g:link controller="vendorInvoice" action="index">Vendor Invoice</g:link>
-            		</li>
-            <li class="controller">
-                		<g:link controller="vendorRating" action="index">Vendor Rating</g:link>
-            		</li>	
-            <li class="controller">
                 		<g:link controller="vendorVideos" action="index">Vendor Videos</g:link>
             		</li>	
+            <h3>Vendor Services:</h3>
+            <li class="controller">
+                		<g:link controller="vendorInvoice" action="index">Vendor Invoice</g:link>
+            		</li>
             <li class="controller">
                 		<g:link controller="customerSupportTicket" action="index">Customer Support Ticket</g:link>
             </li>
