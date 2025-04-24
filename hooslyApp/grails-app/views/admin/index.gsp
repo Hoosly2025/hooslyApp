@@ -141,6 +141,9 @@
                     <li class="controller">
                         <g:link controller="task" action="index">Tasks</g:link>
                     </li>
+                    <li class="controller">
+                        <g:link controller="taskStatus" action="index">TaskStatus</g:link>
+                    </li>
                     <a class="home" href="${createLink(uri: '/')}"><h3>< Back to Homepage</h3></a>
                     <br>
                     <g:form controller="logout">

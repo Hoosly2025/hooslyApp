@@ -9,6 +9,7 @@ class Task {
 	String filename
 	byte[] fileUpload
 	Long user
+	TaskStatus taskStatus
 		
     static constraints = {
 		createTime(nullable:false)
@@ -18,6 +19,7 @@ class Task {
 		filename(nullable:true)
 		fileUpload(nullable:true, maxSize: 1073741824)
 		user(nullable:false)
+		taskStatus(nullable:false)
     }
     
     static mapping = {
