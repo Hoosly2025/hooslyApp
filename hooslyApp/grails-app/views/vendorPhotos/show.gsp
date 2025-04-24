@@ -26,7 +26,9 @@
             Filename: <f:display bean="vendorPhotos" property="filename"/><br>
             Vendor: <f:display bean="vendorPhotos" property="vendor"/><br>
             Update Time: <f:display bean="vendorPhotos" property="updateTime"/><br>
+            <g:if test="${vendorPhotos.fileUpload}">
             <img src="data:image/jpg;base64,${vendorPhotos.fileUpload?.encodeBase64()}"/>
+            </g:if>
             </div>
             <g:form resource="${this.vendorPhotos}" method="DELETE">
                 <fieldset class="buttons">

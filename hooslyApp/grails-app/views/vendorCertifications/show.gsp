@@ -26,7 +26,9 @@
             Filename: <f:display bean="vendorCertifications" property="filename"/><br>
             Vendor: <f:display bean="vendorCertifications" property="vendor"/><br>
             Update Time: <f:display bean="vendorCertifications" property="updateTime"/><br>
+            <g:if test="${vendorCertifications.fileUpload}">
             <g:link action="download" resource="${this.vendorCertifications}">Download</g:link>
+            </g:if>
             </div>
             <g:form resource="${this.vendorCertifications}" method="DELETE">
                 <fieldset class="buttons">

@@ -20,9 +20,11 @@
             <div class="message" role="status">${flash.message}</div>
             </g:if>
             <f:display bean="customerVideos" except="video" />
+            <g:if test="${customerVideos.video}">
             <div style="margin-left:400px;">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/${customerVideos.video}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+            </g:if>
             <g:form resource="${this.customerVideos}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.customerVideos}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

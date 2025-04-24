@@ -68,6 +68,13 @@
             <li class="controller">
                 		<g:link controller="customerSupportTicket" action="index">Customer Support Ticket</g:link>
             </li>
+            <h3>Utility Services:</h3>
+        	<li class="controller">
+                <g:link controller="doc" action="index">Documents</g:link>
+            </li>
+            <li class="controller">
+                <g:link controller="task" action="index">Tasks</g:link>
+            </li>
 		<a class="home" href="${createLink(uri: '/')}"><h3>< Back to Homepage</h3></a>
 		<g:link controller="vendor" action="profile" id="${sec.loggedInUserInfo(field: 'id')}"><h3>Vendor Profile ></h3></g:link>
 		<g:form controller="logout">
