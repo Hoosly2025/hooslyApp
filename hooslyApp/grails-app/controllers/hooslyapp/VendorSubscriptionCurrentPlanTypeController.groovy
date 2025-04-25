@@ -4,7 +4,7 @@ import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 
-@Secured(['ROLE_ADMIN', 'ROLE_USER'])
+@Secured(['ROLE_ADMIN', 'ROLE_VENDOR'])
 class VendorSubscriptionCurrentPlanTypeController {
 
     VendorSubscriptionCurrentPlanTypeService vendorSubscriptionCurrentPlanTypeService
@@ -73,6 +73,7 @@ class VendorSubscriptionCurrentPlanTypeController {
         }
     }
 
+	@Secured(['ROLE_ADMIN'])
     def delete(Long id) {
         if (id == null) {
             notFound()

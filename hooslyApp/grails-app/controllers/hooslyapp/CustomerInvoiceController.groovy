@@ -4,7 +4,7 @@ import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 
-@Secured(['ROLE_ADMIN', 'ROLE_USER'])
+@Secured(['ROLE_ADMIN', 'ROLE_CUSTOMER'])
 class CustomerInvoiceController {
 
     CustomerInvoiceService customerInvoiceService
@@ -24,7 +24,6 @@ class CustomerInvoiceController {
         respond new CustomerInvoice(params)
     }
 
-	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS'])
 	def download(long id) {
 		CustomerInvoice customerInvoiceInstance = customerInvoiceService.get(id)
 		if ( customerInvoiceInstance == null) {
@@ -40,7 +39,6 @@ class CustomerInvoiceController {
 		}
 	}
 	
-	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS'])
 	def invoice(Long id) {
 		//create the customerInvoice object and invoice download can be on the show invoice
 		//create the invoice number, Invoice #: HOOSLY-[YYYYMMDD]-[VENDOR_ID], which is id passed in
@@ -160,7 +158,8 @@ class CustomerInvoiceController {
         }
     }
 
-    def delete(Long id) {
+	@Secured(['ROLE_ADMIN'])
+	def delete(Long id) {
         if (id == null) {
             notFound()
             return

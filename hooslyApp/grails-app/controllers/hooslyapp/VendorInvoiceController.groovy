@@ -7,7 +7,7 @@ import grails.plugin.springsecurity.annotation.Secured
 import java.util.*
 import java.lang.*
 
-@Secured(['ROLE_ADMIN', 'ROLE_USER'])
+@Secured(['ROLE_ADMIN', 'ROLE_VENDOR'])
 class VendorInvoiceController {
 
     VendorInvoiceService vendorInvoiceService
@@ -27,7 +27,6 @@ class VendorInvoiceController {
         respond new VendorInvoice(params)
     }
 
-	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS'])
 	def download(long id) {
 		VendorInvoice vendorInvoiceInstance = vendorInvoiceService.get(id)
 		if ( vendorInvoiceInstance == null) {
@@ -43,7 +42,6 @@ class VendorInvoiceController {
 		}
 	}
 	
-	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS'])
 	def invoice(Long id) {
 		//create the vendorInvoice object and invoice download can be on the show invoice
 		//create the invoice number, Invoice #: HOOSLY-[YYYYMMDD]-[VENDOR_ID], which is id passed in

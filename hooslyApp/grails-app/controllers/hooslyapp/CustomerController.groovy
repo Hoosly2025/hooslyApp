@@ -5,10 +5,10 @@ import security.*
 import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.security.core.context.SecurityContextHolder
 
-@Secured(['ROLE_ADMIN', 'ROLE_USER'])
+@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_CUSTOMER'])
 class CustomerController {
 
-	@Secured(['ROLE_ADMIN', 'ROLE_USER'])
+	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_CUSTOMER'])
     def index() { 
 		def authentication = SecurityContextHolder.getContext().getAuthentication()
 
@@ -30,7 +30,7 @@ class CustomerController {
 		}
 	}
     
-    @Secured(['ROLE_ADMIN', 'ROLE_ANONYMOUS', 'ROLE_USER'])
+    @Secured(['ROLE_ADMIN', 'ROLE_ANONYMOUS', 'ROLE_USER', 'ROLE_CUSTOMER', 'ROLE_VENDOR'])
     def profile(Long id) {
 		def customerOnboarding = CustomerOnboarding.findByCustomer(id)
 		

@@ -5,7 +5,7 @@ import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.security.core.context.SecurityContextHolder
 
-@Secured(['ROLE_ADMIN', 'ROLE_USER'])
+@Secured(['ROLE_ADMIN', 'ROLE_VENDOR'])
 class VendorCertificationsController {
 
     VendorCertificationsService vendorCertificationsService
@@ -79,7 +79,7 @@ class VendorCertificationsController {
         }
     }
 
-	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS'])
+	@Secured(['ROLE_ADMIN', 'ROLE_VENDOR', 'ROLE_CUSTOMER', 'ROLE_ANONYMOUS'])
 	def download(long id) {
 		VendorCertifications vendorCertificationsInstance = vendorCertificationsService.get(id)
 		if ( vendorCertificationsInstance == null) {

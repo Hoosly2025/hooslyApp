@@ -5,7 +5,7 @@ import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.security.core.context.SecurityContextHolder
 
-@Secured(['ROLE_ADMIN', 'ROLE_USER'])
+@Secured(['ROLE_ADMIN', 'ROLE_CUSTOMER', 'ROLE_VENDOR'])
 class DocController {
 
     DocService docService
@@ -78,7 +78,6 @@ class DocController {
         }
     }
 
-	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS'])
 	def download(long id) {
 		Doc docInstance = docService.get(id)
 		if ( docInstance == null) {

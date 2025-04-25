@@ -5,7 +5,7 @@ import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.security.core.context.SecurityContextHolder
 
-@Secured(['ROLE_ADMIN', 'ROLE_USER'])
+@Secured(['ROLE_ADMIN', 'ROLE_CUSTOMER'])
 class CustomerMaintenanceController {
 
     CustomerMaintenanceService customerMaintenanceService
@@ -98,7 +98,8 @@ class CustomerMaintenanceController {
         }
     }
 
-    def delete(Long id) {
+	@Secured(['ROLE_ADMIN'])
+	def delete(Long id) {
         if (id == null) {
             notFound()
             return

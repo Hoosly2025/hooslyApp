@@ -5,7 +5,7 @@ import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.security.core.context.SecurityContextHolder
 
-@Secured(['ROLE_ADMIN', 'ROLE_USER'])
+@Secured(['ROLE_ADMIN', 'ROLE_CUSTOMER', 'ROLE_VENDOR'])
 class TaskController {
 
     TaskService taskService
@@ -78,7 +78,6 @@ class TaskController {
         }
     }
 
-	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS'])
 	def download(long id) {
 		Task taskInstance = taskService.get(id)
 		if ( taskInstance == null) {

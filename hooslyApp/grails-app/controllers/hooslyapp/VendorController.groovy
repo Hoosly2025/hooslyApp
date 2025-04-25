@@ -5,13 +5,13 @@ import security.*
 import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.security.core.context.SecurityContextHolder
 
-@Secured(['ROLE_ADMIN', 'ROLE_USER'])
+@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_VENDOR'])
 class VendorController {
 
 	VendorCertificationsService vendorCertificationsService
 	VendorLicensesService vendorLicensesService
 	
-	@Secured(['ROLE_ADMIN', 'ROLE_USER'])
+	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_VENDOR'])
     def index() { 
 		def authentication = SecurityContextHolder.getContext().getAuthentication()
 
@@ -33,7 +33,7 @@ class VendorController {
 		}
 	}
     
-    @Secured(['ROLE_ADMIN', 'ROLE_ANONYMOUS', 'ROLE_USER'])
+    @Secured(['ROLE_ADMIN', 'ROLE_ANONYMOUS', 'ROLE_USER', 'ROLE_VENDOR', 'ROLE_CUSTOMER'])
     def profile(Long id) {
 		def vendorOnboarding = VendorOnboarding.findByVendor(id)
 		
@@ -52,7 +52,7 @@ class VendorController {
 		//allow rating
 	}
 	
-	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS'])
+	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS', 'ROLE_VENDOR', 'ROLE_CUSTOMER'])
 	def downloadLicense(long id) {
 		VendorLicenses vendorLicensesInstance = vendorLicensesService.get(id)
 		if ( vendorLicensesInstance == null) {
@@ -68,7 +68,7 @@ class VendorController {
 		}
 	}
 	
-	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS'])
+	@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_ANONYMOUS', 'ROLE_VENDOR', 'ROLE_CUSTOMER'])
 	def downloadCertification(long id) {
 		VendorCertifications vendorCertificationsInstance = vendorCertificationsService.get(id)
 		if ( vendorCertificationsInstance == null) {

@@ -3,8 +3,11 @@ package hooslyapp
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
+import org.springframework.security.core.context.SecurityContextHolder
+import grails.gorm.transactions.Transactional
+import security.*
 
-@Secured(['ROLE_ADMIN', 'ROLE_USER'])
+@Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_CUSTOMER'])
 class CustomerOnboardingController {
 
     CustomerOnboardingService customerOnboardingService
@@ -25,13 +28,38 @@ class CustomerOnboardingController {
         respond new CustomerOnboarding(params)
     }
 
+	@Transactional
     def save(CustomerOnboarding customerOnboarding) {
         if (customerOnboarding == null) {
             notFound()
             return
         }
-
+		
         try {
+			def authentication = SecurityContextHolder.getContext().getAuthentication()
+
+	    	if (authentication != null) {
+			
+				def userDetails = authentication.getPrincipal()
+				def authorities = userDetails.authorities
+				
+				//check if user is ROLE_USER, change it to ROLE_CUSTOMER
+				
+				if (authorities?.any { it.authority == 'ROLE_USER' }) {
+					User user = User.findById(userDetails.id)
+					System.out.println("user found: " + user.username)
+					Role role = Role.findByAuthority('ROLE_USER')
+					System.out.println("role found: " + role.authority)
+					
+					def roleRemoved = UserRole.remove(user, role)
+					if (roleRemoved) {
+						System.out.println("Role removed: " + role.authority)
+						Role roleCustomer = Role.findByAuthority('ROLE_CUSTOMER')
+						UserRole.create(user, roleCustomer, true)
+					}
+				}
+			}
+			
             customerOnboardingService.save(customerOnboarding)
         } catch (ValidationException e) {
             respond customerOnboarding.errors, view:'create'
@@ -51,6 +79,7 @@ class CustomerOnboardingController {
         respond customerOnboardingService.get(id)
     }
 
+	@Transactional
     def update(CustomerOnboarding customerOnboarding) {
         if (customerOnboarding == null) {
             notFound()
@@ -58,6 +87,30 @@ class CustomerOnboardingController {
         }
 
         try {
+			def authentication = SecurityContextHolder.getContext().getAuthentication()
+
+	    	if (authentication != null) {
+			
+				def userDetails = authentication.getPrincipal()
+				def authorities = userDetails.authorities
+				
+				//check if user is ROLE_USER, change it to ROLE_CUSTOMER
+				
+				if (authorities?.any { it.authority == 'ROLE_USER' }) {
+					User user = User.findById(userDetails.id)
+					System.out.println("user found: " + user.username)
+					Role role = Role.findByAuthority('ROLE_USER')
+					System.out.println("role found: " + role.authority)
+					
+					def roleRemoved = UserRole.remove(user, role)
+					if (roleRemoved) {
+						System.out.println("Role removed: " + role.authority)
+						Role roleCustomer = Role.findByAuthority('ROLE_CUSTOMER')
+						UserRole.create(user, roleCustomer, true)
+					}
+				}
+			}
+
             customerOnboardingService.save(customerOnboarding)
         } catch (ValidationException e) {
             respond customerOnboarding.errors, view:'edit'
@@ -73,7 +126,8 @@ class CustomerOnboardingController {
         }
     }
 
-    def delete(Long id) {
+	@Secured(['ROLE_ADMIN'])
+	def delete(Long id) {
         if (id == null) {
             notFound()
             return
